@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .profile-card {
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            height: 100%;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-details h2 {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .active-status {
+            color: green;
+        }
+
+        .inactive-status {
+            color: red;
+        }
+
+        /* Vertical Navbar Styles */
+        .vertical-navbar {
+            background-color: #343a40; /* Dark background color */
+            padding: 15px; /* Padding for better visibility */
+        }
+
+        .nav-link {
+            color: #fff !important; /* White text color for links */
+            margin-bottom: 10px; /* Margin between links */
+        }
+    </style>
+    <title>Your Profile</title>
+</head>
+<body>
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Navigation</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-light bg-dark">
+            <a class="navbar-brand" href="#">
+              <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+             EHR
+            </a>
+          </nav>
+    </div>
+
+    <div class="container profile-container">
+        <div class="row justify-content-center">
+            <!-- First Card -->
+            <div class="col-md-6">
+                <div class="card profile-card">
+                    <div class="card-content">
+                        <div class="profile-image">
+                            <img src="{{ url_for('static', filename='pic.jpg') }}" alt="Profile Picture">
+                        </div>
+                        <h2 class="text-center">{{ user.name }}</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Card -->
+            <div class="col-md-6">
+                <div class="card profile-card">
+                    <div class="card-content">
+                        <p>Age: {{ user.age }}</p>
+                        <p>Email: {{ user.email }}</p>
+                        <p>Phone: {{ user.phone }}</p>
+                        <p>Address: {{ user.address }}</p>
+                        <p>Date of Birth: {{ user.dob }}</p>
+                        <p>
+                            Medical Insurance Status: 
+                            <span class="{{ 'active-status' if user.insurance_status.lower() == 'active' else 'inactive-status' }}">
+                                {{ user.insurance_status }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

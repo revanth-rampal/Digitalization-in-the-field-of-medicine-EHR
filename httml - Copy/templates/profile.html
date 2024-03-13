@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+
+    <div class="container profile-container">
+        <div class="row justify-content-center">
+            <!-- First Card -->
+            <div class="col-md-6">
+                <div class="card profile-card">
+                    <div class="card-content">
+                        <div class="profile-image">
+                            <img src="{{ url_for('static', filename=user['image_filename']) }}" alt="Profile Picture">
+                        </div>
+                        <h2 class="text-center">{{ user.name }}</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Card -->
+            <div class="col-md-6">
+                <div class="card profile-card">
+                    <div class="card-content">
+                        <p>Age: {{ user.age }}</p>
+                        <p>Email: {{ user.email }}</p>
+                        <p>Phone: {{ user.phone }}</p>
+                        <p>Address: {{ user.address }}</p>
+                        <p>Date of Birth: {{ user.dob }}</p>
+                        <p>
+                            Medical Insurance Status: 
+                            <span class="{{ 'active-status' if user.insurance_status.lower() == 'active' else 'inactive-status' }}">
+                                {{ user.insurance_status }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

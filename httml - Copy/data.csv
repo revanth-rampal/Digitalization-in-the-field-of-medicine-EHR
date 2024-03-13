@@ -1,0 +1,6 @@
+id,name,age,email,phone,address,dob,insurance_status,
+1,MAFTGFGH,25,your.email@example.com,+1 (555) 123-4567,123 Street, City,Active,
+2,John Doe,30,john.doe@example.com,+1 (555) 987-6543,456 Avenue, Town,Inactive,
+134625,Jane Smith,28,jane.smith@example.com,+1 (555) 555-1234,789 Road, Village,Active,
+333333,Alice Johnson,35,alice.johnson@example.com,+1 (555) 567-8901,101 Lane, Suburb,Active,
+142536,Bob Williams,40,bob.williams@example.com,+1 (555) 234-5678,202 Boulevard, City,Inactive,
